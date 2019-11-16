@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+}
+
+group 'in.geektrust.coding'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    archiveBaseName = 'geektrust'
+    archiveVersion = null
+    version = null
+
+    manifest {
+        attributes 'Main-Class' : 'in.geektrust.coding.FamilyApplication'
+    }
+    from {
+        configurations.runtimeClasspath.collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    } {
+        exclude "META-INF/*.SF"
+        exclude "META-INF/*.DSA"
+        exclude "META-INF/*.RSA"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.5.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.5.2'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.5.2'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.14.0'
+}
+
+test {
+    useJUnitPlatform()
+}
