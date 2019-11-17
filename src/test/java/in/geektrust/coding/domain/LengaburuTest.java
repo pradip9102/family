@@ -1,5 +1,7 @@
 package in.geektrust.coding.domain;
 
+import in.geektrust.coding.domain.family.Gender;
+import in.geektrust.coding.domain.family.Person;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

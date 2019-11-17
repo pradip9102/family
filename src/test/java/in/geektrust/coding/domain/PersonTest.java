@@ -1,5 +1,7 @@
 package in.geektrust.coding.domain;
 
+import in.geektrust.coding.domain.family.Gender;
+import in.geektrust.coding.domain.family.Person;
 import in.geektrust.coding.domain.relationship.Relation;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,8 @@
 package in.geektrust.coding.domain;
 
+import in.geektrust.coding.domain.family.Gender;
+import in.geektrust.coding.domain.family.Person;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 

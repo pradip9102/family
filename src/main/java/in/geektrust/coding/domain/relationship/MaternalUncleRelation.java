@@ -1,6 +1,6 @@
 package in.geektrust.coding.domain.relationship;
 
-import in.geektrust.coding.domain.Person;
+import in.geektrust.coding.domain.family.Person;
 
 import java.util.Collections;
 import java.util.Set;

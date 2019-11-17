@@ -1,4 +1,4 @@
-package in.geektrust.coding.domain;
+package in.geektrust.coding.domain.family;
 
 import java.util.concurrent.atomic.AtomicLong;
 

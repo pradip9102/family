@@ -1,4 +1,4 @@
-package in.geektrust.coding.domain;
+package in.geektrust.coding.domain.family;
 
 import in.geektrust.coding.domain.relationship.Relation;
 

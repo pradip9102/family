@@ -1,7 +1,7 @@
 package in.geektrust.coding.domain.relationship;
 
-import in.geektrust.coding.domain.Gender;
-import in.geektrust.coding.domain.Person;
+import in.geektrust.coding.domain.family.Gender;
+import in.geektrust.coding.domain.family.Person;
 
 import java.util.Set;
 import java.util.function.Function;
