@@ -13,15 +13,6 @@ This coding problem is for backend and fullstack developers and tests object ori
 + Given a 'name' and a 'relationship', output the people corresponding to the relationship in the order in which they were added in the family tree.
 + Add a child to any family in the tree through the mother.
 
-## Simple relations
-+ Father
-+ Mother
-+ Sibling
-+ Child
-
-## How to run
-
-
 ## I/O Format
 | Format | Input | Output |
 |:-------|:------|:-------|
@@ -53,3 +44,18 @@ This coding problem is for backend and fullstack developers and tests object ori
 | `Son` | |
 | `Daughter` | |
 | `Siblings` | |
+
+## Simple relations
++ Father
++ Mother
++ Sibling
++ Child
+
+## Assumptions
++ A new token `LENGABURU` is being used to reset the system, which simply introduces king and queen to the system during
+ initialization to keep things simple. [e.g. `LENGABURU Shan Anga`]
++ Adding new child without mother name should be allow with a wilcard(?) mother name. [e.g. `ADD_CHILD ? Aria Female`] 
+
+## How to run
+
+

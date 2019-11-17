@@ -1,0 +1,37 @@
+LENGABURU Shan Anga
+ADD_CHILD Anga Chit Male
+ADD_CHILD ? Amba Female
+MARRY Chit Amba
+ADD_CHILD Anga Ish Male
+ADD_CHILD Anga Vich Male
+ADD_CHILD ? Lika Female
+MARRY Vich Lika
+ADD_CHILD Anga Aras Male
+ADD_CHILD ? Chitra Female
+MARRY Aras Chitra
+ADD_CHILD Anga Satya Female
+ADD_CHILD ? Vyan Male
+MARRY Satya Vyan
+ADD_CHILD Amba Dritha Female
+ADD_CHILD ? Jaya Male
+MARRY Dritha Jaya
+ADD_CHILD Amba Tritha Female
+ADD_CHILD Amba Vritha Male
+ADD_CHILD Lika Vila Female
+ADD_CHILD Lika Chika Female
+ADD_CHILD ? Arit Male
+ADD_CHILD Chitra Jnki Female
+MARRY Arit Jnki
+ADD_CHILD Chitra Ahit Male
+ADD_CHILD ? Satvy Female
+ADD_CHILD Satya Asva Male
+ADD_CHILD ? Krpi Female
+ADD_CHILD Satya Vyas Male
+ADD_CHILD Satya Atya Female
+ADD_CHILD Dritha Yodhan Male
+ADD_CHILD Jnki Laki Male
+ADD_CHILD Jnki Lavnya Female
+ADD_CHILD Satvy Vasa Male
+ADD_CHILD Krpi Kriya Male
+ADD_CHILD Krpi Krithi Female
+GET_RELATIONSHIP Atya Sister-In-Law
