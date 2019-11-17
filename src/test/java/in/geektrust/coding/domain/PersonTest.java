@@ -120,6 +120,34 @@ public class PersonTest {
                 .isNull();
     }
 
+    @Test
+    void checkExistenceOfPerson() {
+        Person father = new Person("father_name", Gender.MALE);
+        Person mother = new Person("mother_name", Gender.FEMALE);
+        father.marry(mother);
+        Person child = mother.addChild(new Person("child_name", Gender.FEMALE));
+
+        boolean exists = father.hasChild(child);
+
+        assertThat(exists)
+                .isTrue();
+    }
+
+    @Test
+    void removePerson() {
+        Person father = new Person("father_name", Gender.MALE);
+        Person mother = new Person("mother_name", Gender.FEMALE);
+        father.marry(mother);
+        Person child = mother.addChild(new Person("child_name", Gender.FEMALE));
+
+        child.remove();
+
+        assertThat(father.hasChild(child))
+                .isFalse();
+        assertThat(mother.hasChild(child))
+                .isFalse();
+    }
+
     @DisplayName("search child (son/daughter)")
     @ParameterizedTest
     @MethodSource("dataChildRelations")

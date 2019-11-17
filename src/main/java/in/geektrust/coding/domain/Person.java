@@ -83,6 +83,15 @@ public class Person {
         return relation.searchStrategy().apply(this);
     }
 
+    public Boolean hasChild(Person child) {
+        return getChildren().contains(child);
+    }
+
+    public void remove() {
+        getFather().getChildren().remove(this);
+        getMother().getChildren().remove(this);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -94,5 +103,14 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gender=" + gender +
+                '}';
     }
 }
