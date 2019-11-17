@@ -1,6 +1,15 @@
 # Meet The Family
 
-## Capabilities
+## Problem context
+Our story is set in the planet of Lengaburu......in the distant, distant galaxy of Tara B.And our protagonists are King
+Shan, Queen Anga & their family.
+
+King Shan is the emperor of Lengaburu and has been ruling the planet for the last 350 years (they have long lives in
+Lengaburu, you see!). Let’s write some code to get to know the family.
+
+This coding problem is for backend and fullstack developers and tests object oriented fundamentals.
+
+## Features
 + Given a 'name' and a 'relationship', output the people corresponding to the relationship in the order in which they were added in the family tree.
 + Add a child to any family in the tree through the mother.
 
