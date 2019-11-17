@@ -3,15 +3,23 @@ package in.geektrust.coding.domain.relationship;
 import in.geektrust.coding.domain.Gender;
 import in.geektrust.coding.domain.Person;
 
-import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class SonRelation extends Relation {
+    private static SonRelation INSTANCE = new SonRelation();
+
+    private SonRelation() {
+    }
+
+    public static SonRelation getInstance() {
+        return INSTANCE;
+    }
 
     @Override
     public String name() {
-        return "son";
+        return "Son";
     }
 
     @Override
@@ -20,9 +28,9 @@ class SonRelation extends Relation {
     }
 
     @Override
-    public Function<Person, List<Person>> searchStrategy() {
+    public Function<Person, Set<Person>> searchStrategy() {
         return person -> person.getChildren().stream()
                 .filter(it -> Gender.MALE.equals(it.getGender()))
-                .collect(Collectors.toList());
+                .collect(Collectors.toSet());
     }
 }

@@ -2,16 +2,23 @@ package in.geektrust.coding.domain.relationship;
 
 import in.geektrust.coding.domain.Person;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 class SiblingRelation extends Relation {
+    private static SiblingRelation INSTANCE = new SiblingRelation();
+
+    private SiblingRelation() {
+    }
+
+    public static SiblingRelation getInstance() {
+        return INSTANCE;
+    }
 
     @Override
     public String name() {
-        return "sibling";
+        return "Siblings";
     }
 
     @Override
@@ -20,9 +27,9 @@ class SiblingRelation extends Relation {
     }
 
     @Override
-    public Function<Person, List<Person>> searchStrategy() {
+    public Function<Person, Set<Person>> searchStrategy() {
         return child -> child.getMother().getChildren().stream()
-                .filter(it -> !Objects.equals(it, child))
-                .collect(Collectors.toList());
+                .filter(it -> !child.equals(it))
+                .collect(Collectors.toSet());
     }
 }

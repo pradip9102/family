@@ -13,6 +13,12 @@ This coding problem is for backend and fullstack developers and tests object ori
 + Given a 'name' and a 'relationship', output the people corresponding to the relationship in the order in which they were added in the family tree.
 + Add a child to any family in the tree through the mother.
 
+## Simple relations
++ Father
++ Mother
++ Sibling
++ Child
+
 ## How to run
 
 
@@ -36,7 +42,7 @@ This coding problem is for backend and fullstack developers and tests object ori
 | 5. | `GET_RELATIONSHIP Atya Sister-In-Law` | `Krpi Satvy` |
 
 ## Relationships to handle
-| Relationships | Definition |
+| Relationships | Description |
 |:--------------|:-----------|
 | `Paternal-Uncle` | Father's brothers |
 | `Maternal-Uncle` | Mother's brothers |

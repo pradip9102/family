@@ -2,9 +2,7 @@ package in.geektrust.coding.domain;
 
 import in.geektrust.coding.domain.relationship.Relation;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Person {
 
@@ -42,8 +40,8 @@ public class Person {
         return this.mother;
     }
 
-    public Person getSpouse() {
-        return spouse;
+    public Optional<Person> getSpouse() {
+        return Optional.ofNullable(spouse);
     }
 
     public List<Person> getChildren() {
@@ -81,6 +79,10 @@ public class Person {
         return child;
     }
 
+    public Set<Person> search(Relation relation) {
+        return relation.searchStrategy().apply(this);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -92,13 +94,5 @@ public class Person {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    public List<Person> findSiblings() {
-        return Relation.sibling().searchStrategy().apply(this);
-    }
-
-    public List<Person> search(Relation relation) {
-        return relation.searchStrategy().apply(this);
     }
 }
