@@ -24,4 +24,19 @@ public final class ResultCodes {
      * Result contains no elements.
      */
     public static final String NONE = "NONE";
+
+    /**
+     * Planet created/recreated.
+     */
+    public static final String PLANET_CREATED = "PLANET_CREATED";
+
+    /**
+     * New child added successfully.
+     */
+    public static final String CHILD_ADDITION_SUCCEEDED = "CHILD_ADDITION_SUCCEEDED";
+
+    /**
+     * Marriage completed successfully.
+     */
+    public static final String MARRIED = "MARRIED";
 }

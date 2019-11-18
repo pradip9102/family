@@ -48,23 +48,26 @@ public class FamilyApplication {
             case "LENGABURU":
                 if (tokens.length != 3) return -1;
                 lengaburu = new Lengaburu(new Person(tokens[1], Gender.MALE), new Person(tokens[2], Gender.FEMALE));
+                System.out.println(ResultCodes.PLANET_CREATED);
                 return 0;
             case "ADD_CHILD":
                 if (tokens.length != 4 || lengaburu == null) return -1;
                 try {
                     lengaburu.addPerson(tokens[1], tokens[2], Gender.valueOf(tokens[3].toUpperCase()));
+                    System.out.println(ResultCodes.CHILD_ADDITION_SUCCEEDED);
                 } catch (MotherNotFoundException e) {
                     System.out.println(ResultCodes.PERSON_NOT_FOUND);
                 } catch (Exception e) {
                     System.out.println(ResultCodes.CHILD_ADDITION_FAILED);
                 }
                 return 0;
-            case "MARRY":
+            case "MARRIAGE":
                 if (tokens.length != 3 || lengaburu == null) return -1;
                 Optional<Person> person1 = lengaburu.find(tokens[1]);
                 Optional<Person> person2 = lengaburu.find(tokens[2]);
                 if (person1.isPresent() && person2.isPresent()) {
                     person1.get().marry(person2.get());
+                    System.out.println(ResultCodes.MARRIED);
                 } else {
                     System.out.println(ResultCodes.PERSON_NOT_FOUND);
                 }
