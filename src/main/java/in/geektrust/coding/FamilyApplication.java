@@ -20,7 +20,8 @@ public class FamilyApplication {
 
     public static void main(String[] args) {
         try {
-            File file = new File(args[0]);
+            String fileName = (args.length > 0) ? args[0] : "./src/main/resources/sample/TheShanFamilyTree.txt";
+            File file = new File(fileName);
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = reader.readLine();
             while (line != null) {
