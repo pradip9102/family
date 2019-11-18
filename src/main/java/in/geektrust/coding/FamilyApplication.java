@@ -7,9 +7,7 @@ import in.geektrust.coding.domain.relationship.Relationship;
 import in.geektrust.coding.exceptions.MotherNotFoundException;
 import in.geektrust.coding.exceptions.ResultCodes;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -19,10 +17,12 @@ public class FamilyApplication {
     private static Lengaburu lengaburu;
 
     public static void main(String[] args) {
+        FamilyApplication application = new FamilyApplication();
+        InputStream sampleFileName = application.getClass().getClassLoader().getResourceAsStream("sample/TheShanFamilyTree.txt");
         try {
-            String fileName = (args.length > 0) ? args[0] : "./src/main/resources/sample/TheShanFamilyTree.txt";
-            File file = new File(fileName);
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+            BufferedReader reader = (args.length > 0)
+                    ? new BufferedReader(new FileReader(new File(args[0])))
+                    : new BufferedReader(new InputStreamReader(sampleFileName));
             String line = reader.readLine();
             while (line != null) {
                 String[] tokens = line.split(" ");
