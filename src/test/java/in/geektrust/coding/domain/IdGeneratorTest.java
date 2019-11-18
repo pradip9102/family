@@ -9,7 +9,7 @@ public class IdGeneratorTest {
 
     @Test
     void returnsNewId() {
-        assertThat(IdGenerator.newId()).isEqualTo(1L);
-        assertThat(IdGenerator.newId()).isEqualTo(2L);
+        assertThat(IdGenerator.newId())
+                .isNotEqualTo(IdGenerator.newId());
     }
 }
