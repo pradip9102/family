@@ -16,23 +16,27 @@ This coding problem is for backend and fullstack developers and tests object ori
 ## I/O Format
 | Format | Input | Output |
 |:-------|:------|:-------|
-| Add a child | ADD_CHILD ”Mother’s-Name" "Child's-Name" "Gender" | CHILD_ADDITION_SUCCEEDED |
-| | e.g. `ADD_CHILD Chitra Aria Female` | `CHILD_ADDITION_SUCCEEDED` |
-| | | |
-| Find people belonging to a relationship | GET_RELATIONSHIP ”Name” “Relationship” | ”Name 1” “Name 2”... “Name N" |
-| | e.g. `GET_RELATIONSHIP Lavnya Maternal-Aunt` | `Aria` |
-| | e.g. `GET_RELATIONSHIP Aria Siblings` | `Jnki Ahit` |
+| *Recreate planet | `LENGABURU [king_name] [queen_name]` | `PLANET_CREATED` |
+| Add a child | `ADD_CHILD [mother_name] [child_name] [gender]` | `CHILD_ADDITION_SUCCEEDED` |
+| *Marriage | `MARRIAGE [husband_name] [wife_name]` | `MARRIED` |
+| Find related people | `GET_RELATIONSHIP [person_name] [relationship]` | `[[name_1]...]` |
 
 ## Sample I/O scenarios
 | Sample | Input | Output |
 |-------:|:------|:-------|
-| 1. | `ADD_CHILD Pjali Srutak Male` | `PERSON_NOT_FOUND` |
-| 2. | `GET_RELATIONSHIP Pjali Son` | `PERSON_NOT_FOUND` |
-| 3. | `ADD_CHILD Asva Vani Female` | `CHILD_ADDITION_FAILED` |
-| 4. | `GET_RELATIONSHIP Vasa Siblings` | `NONE` |
-| 5. | `GET_RELATIONSHIP Atya Sister-In-Law` | `Krpi Satvy` |
+| 1. | `LENGABURU Shan Anga` | `PLANET_CREATED` |
+| 2. | `MARRIAGE Chit Amba` | `MARRIED` | 
+| 3. | `ADD_CHILD Pjali Srutak Male` | `PERSON_NOT_FOUND` |
+| 4. | `GET_RELATIONSHIP Pjali Son` | `PERSON_NOT_FOUND` |
+| 5. | `ADD_CHILD Asva Vani Female` | `CHILD_ADDITION_FAILED` |
+| 6. | `GET_RELATIONSHIP Vasa Siblings` | `NONE` |
+| 7. | `GET_RELATIONSHIP Atya Sister-In-Law` | `Krpi Satvy` |
 
-## Relationships to handle
+## Supported relationships
+Simple relationships: Father, Mother, Sibling, Child
+
+Composite relationships: others
+
 | Relationships | Description |
 |:--------------|:-----------|
 | `Paternal-Uncle` | Father's brothers |
@@ -44,16 +48,13 @@ This coding problem is for backend and fullstack developers and tests object ori
 | `Son` | |
 | `Daughter` | |
 | `Siblings` | |
-
-## Simple relations
-+ Father
-+ Mother
-+ Sibling
-+ Child
+| *`Brother` | |
+| *`Sister` | |
 
 ## Assumptions
 + A new token `LENGABURU` is being used to reset the system, which simply introduces king and queen to the system during
  initialization to keep things simple. [e.g. `LENGABURU Shan Anga`]
++ `LENGABURU [king_name] [queen_name]` must be the first command to the system.
 + Adding new child without mother name should be allow with a wilcard(?) mother name. [e.g. `ADD_CHILD ? Aria Female`] 
 
 ## How to run
