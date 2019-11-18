@@ -58,5 +58,6 @@ Composite relationships: others
 + Adding new child without mother name should be allow with a wilcard(?) mother name. [e.g. `ADD_CHILD ? Aria Female`] 
 
 ## How to run
-
++ Build jar: `gradle jar`
++ Run jar: `java -jar geektrust.jar [path/to/TestFamilyTree.txt]`
 
